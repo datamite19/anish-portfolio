@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Anish Kandekar · Data engineering, statistics and AI</title>
+<meta name="description" content="Portfolio of Anish Sunil Kandekar: data engineer, data analyst and AI researcher. Data workflows, published research and ongoing study in applied statistics.">
+<meta property="og:title" content="Anish Kandekar · Data engineering, statistics and AI">
+<meta property="og:description" content="Building with data. Thinking with statistics. Exploring AI.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/anish-portrait.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%231f3fff'/%3E%3Ctext x='16' y='23' font-size='20' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='700'%3EA%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f6f6f2;--ink:#17191f;--mute:#5a5f6b;--line:#d8d9dd;--acc:#1f3fff;--accsoft:#e8ebff;
+--sans:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;--mono:"IBM Plex Mono",ui-monospace,Menlo,monospace}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.65 var(--sans);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--acc);outline-offset:3px;border-radius:2px}
+[hidden]{display:none!important}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+.mono{font-family:var(--mono);font-size:.82rem;color:var(--mute)}
+/* header */
+header.top{position:sticky;top:0;z-index:20;background:rgba(246,246,242,.94);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.mark{font-weight:700;text-decoration:none;letter-spacing:-.01em}
+nav ul{display:flex;gap:26px;list-style:none;margin:0;padding:0;align-items:center}
+nav a{text-decoration:none;font-size:.95rem;color:var(--mute)}
+nav a:hover{color:var(--ink)}
+nav a.li{color:var(--acc);font-weight:600}
+.menu-btn{display:none;background:none;border:1px solid var(--line);padding:6px 12px;font:inherit;font-size:.9rem;color:var(--ink);cursor:pointer;border-radius:4px}
+@media(max-width:760px){
+.menu-btn{display:block}
+nav ul{display:none;position:absolute;left:0;right:0;top:60px;background:var(--bg);border-bottom:1px solid var(--line);flex-direction:column;align-items:flex-start;gap:0;padding:8px 24px 16px}
+nav ul.open{display:flex}nav li{padding:8px 0}}
+/* hero */
+.hero{padding:72px 0 88px;display:grid;grid-template-columns:1.35fr 1fr;gap:56px;align-items:center}
+h1{font-size:clamp(2.5rem,6.2vw,4.6rem);line-height:1.02;letter-spacing:-.035em;margin:14px 0 24px;font-weight:700}
+h1 span{display:block}
+h1 span:nth-child(2){color:var(--mute)}
+h1 span:nth-child(3){color:var(--acc)}
+.lede{max-width:34em;color:var(--mute);font-size:1.15rem;margin:0 0 32px}
+.actions{display:flex;flex-wrap:wrap;gap:12px 22px;align-items:center}
+.btn{display:inline-block;padding:13px 22px;border:1px solid var(--ink);text-decoration:none;font-weight:600;font-size:.98rem;transition:background .15s,color .15s}
+.btn.solid{background:var(--ink);color:var(--bg)}
+.btn.solid:hover{background:var(--acc);border-color:var(--acc)}
+.btn.line:hover{background:var(--ink);color:var(--bg)}
+.tl{font-size:.95rem;color:var(--mute)}
+.tl:hover{color:var(--acc)}
+.portrait{position:relative;margin:0;aspect-ratio:4/5;background:var(--accsoft);border:1px solid var(--line);overflow:hidden}
+.portrait img{width:100%;height:100%;object-fit:cover;object-position:center 20%;display:block}
+.portrait .fb{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;text-align:center;padding:24px}
+.fb b{font-size:5rem;letter-spacing:-.05em;color:var(--acc);line-height:1}
+@media(max-width:860px){.hero{grid-template-columns:1fr;padding:40px 0 56px;gap:36px}.portrait{max-width:320px;order:-1}}
+/* sections */
+section{padding:84px 0;border-top:1px solid var(--line)}
+.sec{display:grid;grid-template-columns:200px 1fr;gap:40px}
+.sec>aside{position:sticky;top:90px;align-self:start}
+h2{font-size:clamp(1.7rem,3.4vw,2.4rem);line-height:1.12;letter-spacing:-.025em;margin:6px 0 0}
+h3{font-size:1.3rem;letter-spacing:-.015em;margin:0 0 8px;line-height:1.25}
+p{margin:0 0 14px}
+@media(max-width:860px){.sec{grid-template-columns:1fr;gap:20px}.sec>aside{position:static}section{padding:60px 0}}
+/* work */
+.item{padding:36px 0;border-bottom:1px solid var(--line)}
+.item:first-child{padding-top:0}.item:last-child{border:0}
+.tag{display:inline-block;font:400 .78rem var(--mono);color:var(--acc);border:1px solid var(--acc);padding:1px 8px;margin-right:8px;border-radius:99px}
+.tag.wip{color:var(--mute);border-color:var(--mute)}
+dl.facts{display:grid;grid-template-columns:130px 1fr;gap:10px 20px;margin:18px 0 0}
+dl.facts dt{font:400 .82rem var(--mono);color:var(--mute);padding-top:3px}
+dl.facts dd{margin:0}
+@media(max-width:560px){dl.facts{grid-template-columns:1fr;gap:2px}dl.facts dd{margin-bottom:10px}}
+.flow{display:flex;flex-wrap:wrap;gap:0;margin:22px 0 4px;padding:0;list-style:none}
+.flow li{position:relative;padding:10px 16px;border:1px solid var(--ink);margin:0 -1px -1px 0;font-size:.92rem;background:var(--bg)}
+.flow li:not(:last-child)::after{content:"";position:absolute;right:-7px;top:50%;width:12px;height:12px;background:var(--bg);border-top:1px solid var(--ink);border-right:1px solid var(--ink);transform:translateY(-50%) rotate(45deg);z-index:1}
+.flow li:last-child{background:var(--accsoft);border-color:var(--acc)}
+.note{font-size:.88rem;color:var(--mute)}
+.lnk{color:var(--acc);text-decoration:none;border-bottom:1px solid transparent;font-weight:600}
+.lnk:hover{border-bottom-color:var(--acc)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0;margin:14px 0 0}
+.chips li{border:1px solid var(--line);padding:3px 11px;font-size:.9rem;border-radius:99px}
+/* research */
+.pub{padding:22px 0;border-bottom:1px solid var(--line)}
+.pub:first-of-type{padding-top:0}
+.empty{border:1px dashed var(--mute);padding:18px 20px;color:var(--mute);font-size:.95rem;margin-top:22px}
+/* learning */
+.track{padding:26px 0;border-bottom:1px solid var(--line)}
+.track:first-child{padding-top:0}
+.topics{list-style:none;padding:0;margin:12px 0 0}
+.topics li{display:flex;justify-content:space-between;gap:16px;padding:7px 0;border-top:1px solid var(--line)}
+.topics li span:last-child{font:400 .8rem var(--mono);color:var(--mute);white-space:nowrap;padding-top:3px}
+.topics li.s-Applied span:last-child,.topics li.s-Independent span:last-child{color:var(--acc)}
+.now{background:var(--accsoft);padding:22px 24px;margin-top:30px}
+.now ul{margin:8px 0 0;padding-left:18px}
+/* skills & about */
+.skills{display:grid;grid-template-columns:150px 1fr;gap:12px 20px;margin:0}
+.skills dt{font-weight:600}.skills dd{margin:0;color:var(--mute)}
+@media(max-width:560px){.skills{grid-template-columns:1fr;gap:2px}.skills dd{margin-bottom:12px}}
+.edu{margin-top:24px;border-top:1px solid var(--ink)}
+.edu div{padding:14px 0;border-bottom:1px solid var(--line)}
+/* contact */
+.contact{padding:110px 0 80px}
+.contact h2{font-size:clamp(2.1rem,5.5vw,3.8rem);max-width:12em;line-height:1.05}
+.contact p.l{max-width:32em;color:var(--mute);font-size:1.15rem;margin:20px 0 30px}
+.copy{background:none;border:0;font:inherit;color:var(--acc);cursor:pointer;padding:0;font-size:.9rem;text-decoration:underline}
+.niche{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--ink);margin-bottom:8px}
+.niche div{padding:18px 20px 22px 0}
+.niche div+div{padding-left:20px;border-left:1px solid var(--line)}
+.niche b{display:block;font-size:1.05rem;letter-spacing:-.01em}
+.niche span{color:var(--mute);font-size:.95rem;line-height:1.45;display:block;margin-top:4px}
+@media(max-width:700px){.niche{grid-template-columns:1fr}.niche div+div{padding-left:0;border-left:0;border-top:1px solid var(--line)}}
+.fit{margin:0 0 44px}
+.princ{list-style:none;margin:20px 0 0;padding:0;border-top:1px solid var(--ink)}
+.princ li{display:grid;grid-template-columns:190px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid var(--line)}
+.princ b{font-weight:600}.princ span{color:var(--mute)}
+@media(max-width:600px){.princ li{grid-template-columns:1fr;gap:2px}}
+.sys{width:100%;height:auto;margin-top:22px;font-family:var(--sans)}
+.sys text{fill:var(--ink);font-size:13px}.sys .m{font-family:var(--mono);font-size:11px;fill:var(--mute)}
+.sys rect.n{fill:var(--bg);stroke:var(--ink)}.sys rect.o{fill:var(--accsoft);stroke:var(--acc)}.sys path{stroke:var(--ink);fill:none}
+.beyond{background:#efefe9}
+.beyond .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px 40px}
+.beyond h3{font-size:1.05rem;margin-bottom:4px}.beyond p{color:var(--mute);font-size:.98rem;margin:0}
+@media(max-width:600px){.beyond .grid{grid-template-columns:1fr}}
+footer{border-top:1px solid var(--line);padding:26px 0 40px}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
+footer a{color:var(--mute)}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style>
+</head>
+<body>
+<a href="#main" class="mono" style="position:absolute;left:-999px" onfocus="this.style.left='8px'" onblur="this.style.left='-999px'">Skip to content</a>
+
+<header class="top">
+ <div class="wrap">
+  <a class="mark" href="#top" data-bind="name-short">Anish Kandekar</a>
+  <button class="menu-btn" aria-expanded="false" aria-controls="navlist">Menu</button>
+  <nav aria-label="Primary">
+   <ul id="navlist">
+    <li><a href="#about">About</a></li>
+    <li><a href="#work">Work</a></li>
+    <li><a href="#research">Research</a></li>
+    <li><a href="#learning">Learning</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a class="li" data-link="linkedin" hidden target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile (opens in a new tab)">LinkedIn ↗</a></li>
+   </ul>
+  </nav>
+ </div>
+</header>
+
+<main id="main">
+<div class="wrap" id="top">
+ <div class="hero">
+  <div>
+   <p class="mono">Data Engineer · Data Analyst · AI Researcher</p>
+   <h1><span>Building with data.</span><span>Thinking with statistics.</span><span>Exploring AI.</span></h1>
+   <p class="lede">I’m a data and technology professional interested in building useful systems, finding meaning in data, and investigating how AI can solve real-world problems.</p>
+   <div class="actions">
+    <a class="btn solid" href="#work">Explore my work</a>
+    <a class="btn line" data-link="linkedin" hidden target="_blank" rel="noopener noreferrer">Connect on LinkedIn ↗</a>
+    <a class="tl" data-link="resume" hidden target="_blank" rel="noopener noreferrer">Resume (PDF)</a>
+   </div>
+  </div>
+  <figure class="portrait">
+   <div class="fb" aria-hidden="true"><b>AK</b><span class="mono">Add assets/anish-portrait.jpg</span></div>
+   <img src="assets/anish-portrait.jpg" alt="Portrait of Anish Kandekar" width="800" height="1000" fetchpriority="high" onerror="this.remove()">
+  </figure>
+ </div>
+<div class="fit">
+  <p class="mono" style="margin:0 0 12px">Where I fit best</p>
+  <div class="niche">
+   <div><b>Data engineering</b><span>Loading, validating and reporting on business data. SQL, MongoDB, Bash, APIs.</span></div>
+   <div><b>Analytics and statistics</b><span>Choosing the right method for the question. PGDAST in progress.</span></div>
+   <div><b>AI research</b><span>Published author on AI in education. Interested in trustworthy AI.</span></div>
+  </div>
+ </div>
+</div>
+
+<section id="about"><div class="wrap sec">
+ <aside><p class="mono">About</p><h2>Engineering, statistics and the problem behind them</h2></aside>
+ <div>
+  <p>I studied Data Science and Business Analytics, then spent my first sixteen months in industry moving from a management trainee role into data engineering and analytics at SEED Global Education. Alongside that, I write research and keep studying the statistics that explain what systems produce.</p>
+  <p>My view is simple: practical technology works best when the engineering, the analytical reasoning and a clear understanding of the underlying problem come together. I try to build with all three in mind. Away from work I read, write, play cricket and debate; <a class="lnk" href="#beyond">more here</a>.</p>
+  <div class="edu">
+   <div><b>Post Graduate Diploma in Applied Statistics (PGDAST)</b><br><span class="mono">IGNOU · admitted July 2026 · ongoing</span></div>
+   <div><b>Bachelor’s in Data Science and Business Analytics</b><br><span class="mono">School of Applied Sciences, HSNC University, Mumbai · graduated March 2025</span></div>
+  </div>
+  <h3 style="margin-top:36px">Skills</h3>
+  <p class="note">Listed by what I use, not rated. Evidence sits in the work below.</p>
+  <dl class="skills">
+   <dt>Data and databases</dt><dd>SQL, MongoDB, relational databases, data-loading workflows</dd>
+   <dt>Programming</dt><dd>Python, Bash, scripting, automation</dd>
+   <dt>Analytics</dt><dd>Excel, hypothesis testing, regression, statistical inference</dd>
+   <dt>Tools</dt><dd>Linux, VS Code, PuTTY, Postman, Jira</dd>
+   <dt>AI workflows</dt><dd>AI-assisted coding, validating output against requirements</dd>
+  </dl>
+ </div>
+</div></section>
+
+<section id="work"><div class="wrap sec">
+ <aside><p class="mono">Build</p><h2>Selected work</h2></aside>
+ <div>
+  <article class="item">
+   <span class="tag">Professional experience</span><span class="mono">SEED Global Education · May 2025 – Sep 2026</span>
+   <h3 style="margin-top:12px">Moving business data into usable databases</h3>
+   <p>Business information lived across platforms and websites. My team needed it in internal databases in a form people could trust and report on.</p>
+   <ol class="flow" aria-label="Conceptual data flow">
+    <li>Source systems</li><li>Ingestion and loading</li><li>Database</li><li>Validation</li><li>Reporting and downstream use</li>
+   </ol>
+   <p class="note">A simplified concept, not the production architecture.</p>
+   <dl class="facts">
+    <dt>Why it matters</dt><dd>Reliable data movement and structured information reduce manual work and make data easier to use.</dd>
+    <dt>My part</dt><dd>Contributed to data-loading workflows, database operations, validation and testing, API checks, and reporting, working with technology, marketing and operations teams.</dd>
+    <dt>Tools</dt><dd>SQL, MongoDB, Bash, Linux, APIs, Postman, Jira</dd>
+    <dt>Outcome</dt><dd>[Add a measured result here only if you have evidence.]</dd>
+   </dl>
+  </article>
+
+  <article class="item">
+   <span class="tag">Research</span><span class="mono">Lead author · Published</span>
+   <h3 style="margin-top:12px">Impact of AI on Education Forum Driven by Social Media</h3>
+   <p>[Add a 2–3 sentence summary in your own words from the paper: the question, the method, the main finding.]</p>
+   <p><a class="lnk" data-link="paper" hidden target="_blank" rel="noopener noreferrer">Read my chapter (starts p. 133) ↗</a> &nbsp; <a class="tl" href="#research">Publication details</a></p>
+  </article>
+
+  <article class="item">
+   <span class="tag">Statistics</span>
+   <h3 style="margin-top:12px">Applied statistics, chosen for the question</h3>
+   <p>I pick a method by the question and the data: regression for relationships, hypothesis tests for differences, factor analysis for hidden structure.</p>
+   <ul class="chips"><li>Regression</li><li>Logistic regression</li><li>Hypothesis testing</li><li>Z-test</li><li>Mann–Whitney U</li><li>Exploratory factor analysis</li><li>Structural equation modelling</li></ul>
+   <p class="note" style="margin-top:14px">[Attach each method to the project where you used it, with the dataset and what it showed. Remove any you cannot back up.]</p>
+  </article>
+
+  <article class="item">
+   <span class="tag">Process</span>
+   <h3 style="margin-top:12px">Using AI coding assistants responsibly</h3>
+   <p>AI helps me explore options faster. It does not replace checking. Every suggestion is compared with the requirement, tested and reviewed before it is used.</p>
+   <ol class="flow" aria-label="AI-assisted development process">
+    <li>Requirements</li><li>Explore solutions</li><li>Implement</li><li>Review</li><li>Test</li><li>Refine</li>
+   </ol>
+  </article>
+
+  <article class="item">
+   <span class="tag wip">In progress</span>
+   <h3 style="margin-top:12px">Projects from my PGDAST study</h3>
+   <p>Statistical notebooks, Python projects and experiments will be added here as I finish them.</p>
+   <div class="empty" id="proj-empty">No finished projects yet. Add entries to <code>PROJECTS</code> in the script and they appear here.</div>
+   <div id="proj-list"></div>
+  </article>
+ </div>
+</div></section>
+
+<section id="systems"><div class="wrap sec">
+ <aside><p class="mono">Build</p><h2>How I think about data systems</h2></aside>
+ <div>
+  <p>A pipeline is only useful if people can trust what comes out. These are the questions I ask of any data workflow, drawn from my work and my study of system design.</p>
+  <svg class="sys" viewBox="0 0 640 170" role="img" aria-label="Five pipeline stages from sources to reporting, with testing and monitoring running beneath all of them">
+   <g stroke-width="1">
+    <rect class="n" x="2" y="10" width="108" height="48"/><text x="56" y="39" text-anchor="middle">Sources</text>
+    <rect class="n" x="134" y="10" width="108" height="48"/><text x="188" y="39" text-anchor="middle">Ingest</text>
+    <rect class="n" x="266" y="10" width="108" height="48"/><text x="320" y="39" text-anchor="middle">Store</text>
+    <rect class="n" x="398" y="10" width="108" height="48"/><text x="452" y="39" text-anchor="middle">Validate</text>
+    <rect class="o" x="530" y="10" width="108" height="48"/><text x="584" y="39" text-anchor="middle">Report</text>
+    <path d="M110 34h24M242 34h24M374 34h24M506 34h24"/>
+    <rect class="o" x="2" y="92" width="636" height="44"/>
+    <text x="320" y="119" text-anchor="middle">Version control · automated tests · logging and monitoring</text>
+   </g>
+   <text class="m" x="2" y="162">Concept diagram. Not a specific production system.</text>
+  </svg>
+  <ul class="princ">
+   <li><b>Safe to re-run</b><span>A load that runs twice should not create duplicate records.</span></li>
+   <li><b>Check at the boundary</b><span>Validate data when it enters, not after someone spots a wrong report.</span></li>
+   <li><b>Agree the schema</b><span>Clear field definitions between source and consumer prevent silent breakage.</span></li>
+   <li><b>Make failure visible</b><span>Logs and alerts so problems surface early, with a clear place to look.</span></li>
+   <li><b>Test and version it</b><span>Scripts live in version control and are tested before they run on real data.</span></li>
+  </ul>
+  <p class="note" style="margin-top:14px">[Edit these to match what you have actually done at SEED. Keep only the ones you can speak to in an interview.]</p>
+ </div>
+</div></section>
+
+<section id="research"><div class="wrap sec">
+ <aside><p class="mono">Investigate</p><h2>Research</h2></aside>
+ <div>
+  <div class="pub">
+   <span class="tag">Published</span><span class="mono">Lead author · [venue, year]</span>
+   <h3 style="margin-top:12px">Impact of AI on Education Forum Driven by Social Media</h3>
+   <p>[Short description from the paper’s abstract, in your own words.]</p>
+   <a class="lnk" data-link="paper" hidden target="_blank" rel="noopener noreferrer">Read the paper ↗</a> <span class="note">My chapter starts on page 133 of the volume.</span>
+  </div>
+  <div class="empty">In progress or under review: nothing listed yet. Add each item with its exact status.</div>
+  <p class="note" style="margin-top:22px">Broader interests: applied statistics, research methodology, trustworthy AI and AI safety.</p>
+ </div>
+</div></section>
+
+<section id="learning"><div class="wrap sec">
+ <aside><p class="mono">Learn</p><h2>How I’m growing</h2><p class="note" style="margin-top:12px">Labels describe where I am with a topic. They are not scores.</p></aside>
+ <div id="tracks"></div>
+</div></section>
+
+<section id="beyond" class="beyond"><div class="wrap sec">
+ <aside><p class="mono">Beyond work</p><h2>Outside the code</h2></aside>
+ <div class="grid">
+  <div><h3>Reading and writing</h3><p>I read and write, mostly English and Marathi literature.</p></div>
+  <div><h3>Cricket</h3><p>I play cricket. It taught me patience, teamwork and playing the long game.</p></div>
+  <div><h3>Debate</h3><p>I enjoy debating. It trains me to build an argument and test it against the opposite view.</p></div>
+  <div><h3>Society and economy</h3><p>I follow socio-economic questions, especially those that shape India.</p></div>
+ </div>
+</div></section>
+
+<section id="contact" class="contact"><div class="wrap">
+ <p class="mono">Contact</p>
+ <h2>Let’s work on something that matters.</h2>
+ <p class="l">If you’re building data products, solving analytical problems, or exploring the practical applications of AI, I’d be glad to connect.</p>
+ <div class="actions">
+  <a class="btn solid" data-link="linkedin" hidden target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+  <a class="btn line" data-link="email" hidden></a>
+  <a class="tl" data-link="github" hidden target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+  <a class="tl" data-link="resume" hidden target="_blank" rel="noopener noreferrer">Resume (PDF)</a>
+  <button class="copy" id="copy" hidden>Copy email</button>
+ </div>
+ <p class="mono" id="status" role="status" aria-live="polite" style="margin-top:12px"></p>
+</div></section>
+</main>
+
+<footer><div class="wrap">
+ <span class="mono">© <span id="yr"></span> Anish Sunil Kandekar</span>
+ <span class="mono"><a data-link="linkedin" hidden target="_blank" rel="noopener noreferrer">LinkedIn</a></span>
+</div></footer>
+
+<script>
+/* ============ CONFIGURATION: edit this block only ============ */
+const CONFIG = {
+  NAME: "Anish Sunil Kandekar",
+  LINKEDIN_URL: "https://www.linkedin.com/in/anish-kandekar-9a295a201/",
+  GITHUB_URL: "https://github.com/datamite19",
+  EMAIL_ADDRESS: "anishkandekar2104@gmail.com",
+  RESUME_URL: "assets/resume.pdf",   // set to "" until you add the PDF
+  PAPER_URL: "https://drive.google.com/file/d/1gGz39Jn9y3eV3GzWy1O-E7ILwgrVF12K/view?usp=sharing"
+};
+/* Finished learning projects. Example entry:
+   {title:"Regression on housing data", status:"Completed", summary:"One sentence.", link:"https://..."} */
+const PROJECTS = [];
+/* Learning tracks. Status must be one of: Studying, Practising, Applied in a project, Comfortable using independently */
+const TRACKS = [
+ {name:"Applied statistics", topics:[["Probability and statistical inference","Studying"],["Hypothesis testing","Studying"],["Regression","Studying"],["Multivariate analysis","Studying"],["Industrial statistics","Studying"]]},
+ {name:"Data engineering", topics:[["SQL and databases","Applied in a project"],["Data-loading workflows and ETL concepts","Applied in a project"],["APIs and data validation","Applied in a project"],["Pipeline architecture","Studying"]]},
+ {name:"AI and research", topics:[["AI-assisted development","Applied in a project"],["Research methodology","Applied in a project"],["Trustworthy AI and AI safety","Studying"]]},
+ {name:"Software engineering", topics:[["Python","Practising"],["Bash and Linux","Applied in a project"],["Testing and automation","Practising"]]}
+];
+const EXPLORING = ["Statistical inference in Python","Evaluating AI outputs"];
+/* ================================================================ */
+
+const ok = v => v && !/^PASTE_/.test(v);
+const urls = {
+  linkedin: CONFIG.LINKEDIN_URL, github: CONFIG.GITHUB_URL,
+  resume: CONFIG.RESUME_URL, paper: CONFIG.PAPER_URL,
+  email: ok(CONFIG.EMAIL_ADDRESS) ? "mailto:" + CONFIG.EMAIL_ADDRESS : ""
+};
+document.querySelectorAll("[data-link]").forEach(a => {
+  const k = a.dataset.link, u = urls[k];
+  if (!ok(u)) return;
+  a.href = u; a.hidden = false;
+  if (k === "email") a.textContent = CONFIG.EMAIL_ADDRESS;
+  if (k === "resume" && !a.textContent.trim()) a.textContent = "Resume (PDF)";
+});
+if (ok(CONFIG.EMAIL_ADDRESS)) document.getElementById("copy").hidden = false;
+document.getElementById("copy").addEventListener("click", async () => {
+  const s = document.getElementById("status");
+  try { await navigator.clipboard.writeText(CONFIG.EMAIL_ADDRESS); s.textContent = "Email address copied."; }
+  catch { s.textContent = "Copy failed. Please copy it from the link."; }
+});
+document.getElementById("yr").textContent = new Date().getFullYear();
+
+const btn = document.querySelector(".menu-btn"), list = document.getElementById("navlist");
+btn.addEventListener("click", () => { const o = list.classList.toggle("open"); btn.setAttribute("aria-expanded", o); });
+list.addEventListener("click", e => { if (e.target.closest("a")) { list.classList.remove("open"); btn.setAttribute("aria-expanded", "false"); } });
+
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+document.getElementById("tracks").innerHTML = TRACKS.map(t =>
+  `<div class="track"><h3>${esc(t.name)}</h3><ul class="topics">${t.topics.map(([n, s]) =>
+  `<li class="s-${esc(s.split(" ")[0])}"><span>${esc(n)}</span><span>${esc(s)}</span></li>`).join("")}</ul></div>`).join("") +
+  (EXPLORING.length ? `<div class="now"><b>Currently exploring</b><ul>${EXPLORING.map(x => `<li>${esc(x)}</li>`).join("")}</ul></div>` : "");
+
+if (PROJECTS.length) {
+  document.getElementById("proj-empty").hidden = true;
+  document.getElementById("proj-list").innerHTML = PROJECTS.map(p =>
+    `<div class="pub"><span class="tag${p.status === "Completed" ? "" : " wip"}">${esc(p.status)}</span><h3 style="margin-top:10px">${esc(p.title)}</h3><p>${esc(p.summary)}</p>${ok(p.link) ? `<a class="lnk" href="${esc(p.link)}" target="_blank" rel="noopener noreferrer">View ↗</a>` : ""}</div>`).join("");
+}
+</script>
+</body>
+</html>
