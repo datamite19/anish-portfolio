@@ -124,6 +124,10 @@ dl.facts dd{margin:0}
 .beyond .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px 40px}
 .beyond h3{font-size:1.05rem;margin-bottom:4px}.beyond p{color:var(--mute);font-size:.98rem;margin:0}
 @media(max-width:600px){.beyond .grid{grid-template-columns:1fr}}
+.metric{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 14px;margin:20px 0 4px;padding:14px 0;border-top:1px solid var(--ink);border-bottom:1px solid var(--line)}
+.metric b{font-size:clamp(1.5rem,3.4vw,2rem);letter-spacing:-.025em;color:var(--acc)}
+.next p{max-width:36em}
+.next .close{font-size:1.25rem;font-weight:600;letter-spacing:-.015em;margin-top:24px}
 footer{border-top:1px solid var(--line);padding:26px 0 40px}
 footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
 footer a{color:var(--mute)}
@@ -185,7 +189,7 @@ footer a{color:var(--mute)}
   <p>My view is simple: practical technology works best when the engineering, the analytical reasoning and a clear understanding of the underlying problem come together. I try to build with all three in mind. Away from work I read, write, play cricket and debate; <a class="lnk" href="#beyond">more here</a>.</p>
   <div class="edu">
    <div><b>Post Graduate Diploma in Applied Statistics (PGDAST)</b><br><span class="mono">IGNOU · admitted July 2026 · ongoing</span></div>
-   <div><b>Bachelor’s in Data Science and Business Analytics</b><br><span class="mono">School of Applied Sciences, HSNC University, Mumbai · graduated March 2025</span></div>
+   <div><b>Bachelor’s in Data Science and Business Analytics</b><br><span class="mono">School of Applied Sciences, HSNC University, Mumbai · graduated March 2025</span><br><a class="lnk" href="assets/bachelors-certificate.pdf" target="_blank" rel="noopener noreferrer" aria-label="View bachelor’s degree certificate (PDF, opens in a new tab)">View bachelor’s degree certificate (PDF) ↗</a></div>
   </div>
   <h3 style="margin-top:36px">Skills</h3>
   <p class="note">Listed by what I use, not rated. Evidence sits in the work below.</p>
@@ -214,7 +218,36 @@ footer a{color:var(--mute)}
     <dt>Why it matters</dt><dd>Reliable data movement and structured information reduce manual work and make data easier to use.</dd>
     <dt>My part</dt><dd>Contributed to data-loading workflows, database operations, validation and testing, API checks, and reporting, working with technology, marketing and operations teams.</dd>
     <dt>Tools</dt><dd>SQL, MongoDB, Bash, Linux, APIs, Postman, Jira</dd>
-    <dt>Outcome</dt><dd>TBA</dd>
+    <dt>Outcome</dt><dd>[Add a measured result here only if you have evidence.]</dd>
+   </dl>
+  </article>
+
+  <article class="item">
+   <span class="tag">Professional experience</span><span class="mono">SEED Global Education</span>
+   <h3 style="margin-top:12px">AI-powered program data extraction</h3>
+   <p>Engineered an AI-powered academic program data extraction pipeline using the Anthropic Claude API and Python. It searched school websites and third-party education directories and turned a school and program name into a structured CSV of 13 data points for downstream business operations.</p>
+   <div class="metric"><b>3–4 min → 10–15 sec</b><span class="mono">per program · about 92–96% less time · 12–24× faster</span></div>
+   <ol class="flow" aria-label="Extraction workflow">
+    <li>School and program name</li><li>Search websites and directories</li><li>Claude API extraction</li><li>Automated checks</li><li>Human review</li><li>Structured CSV</li>
+   </ol>
+   <dl class="facts">
+    <dt>The problem</dt><dd>Program details such as fees, duration and STEM status were collected by hand across many sites, at roughly 3–4 minutes per program.</dd>
+    <dt>My part</dt><dd>Claude API integration, prompt design, Python scripting and automation, structured data extraction, and error handling with retries. I built most of the end-to-end implementation.</dd>
+    <dt>Output</dt><dd>A CSV with 13 data points per program, including program URL, tuition, application fee, STEM designation, and minimum and maximum duration.</dd>
+    <dt>Quality</dt><dd>Automated checks and human review sat alongside the model, so people confirmed results before they were used.</dd>
+    <dt>Tools</dt><dd>Python, Anthropic Claude API, a search interface built for the workflow</dd>
+   </dl>
+  </article>
+
+  <article class="item">
+   <span class="tag">Professional experience</span><span class="mono">SEED Global Education</span>
+   <h3 style="margin-top:12px">Infrastructure recovery during a global cPanel outage</h3>
+   <p>Strengthened production infrastructure resilience through SSH-based diagnostics, MySQL backup and restoration using <code>mysqldump</code>, and coordinated recovery of company databases and files during a global cPanel outage. Afterwards I implemented Acronis backup capabilities and documented recovery procedures to improve disaster recovery readiness and reduce future data-loss risk.</p>
+   <dl class="facts">
+    <dt>Context</dt><dd>The affected server hosted company databases, administrative files and development work.</dd>
+    <dt>My part</dt><dd>I carried out most of my assigned technical work: investigating disk usage, files and logs over SSH, creating MySQL backups, working with datacenter and hosting vendor teams, and restoring databases, files and services. The outage itself was resolved with those teams.</dd>
+    <dt>Afterwards</dt><dd>Implemented Acronis backup capabilities and wrote up the recovery procedures.</dd>
+    <dt>Tools</dt><dd>SSH, Linux, MySQL, <code>mysqldump</code>, cPanel, Acronis</dd>
    </dl>
   </article>
 
@@ -276,7 +309,7 @@ footer a{color:var(--mute)}
    <li><b>Make failure visible</b><span>Logs and alerts so problems surface early, with a clear place to look.</span></li>
    <li><b>Test and version it</b><span>Scripts live in version control and are tested before they run on real data.</span></li>
   </ul>
-  <p class="note" style="margin-top:14px"></p>
+  <p class="note" style="margin-top:14px">[Edit these to match what you have actually done at SEED. Keep only the ones you can speak to in an interview.]</p>
  </div>
 </div></section>
 
@@ -303,9 +336,19 @@ footer a{color:var(--mute)}
  <aside><p class="mono">Beyond work</p><h2>Outside the code</h2></aside>
  <div class="grid">
   <div><h3>Reading and writing</h3><p>I read and write, mostly English and Marathi literature.</p></div>
-  <div><h3>Cricket</h3><p>I play cricket. It taught me patience, teamwork and playing the long game.</p></div>
+  <div><h3>Cricket</h3><p>I play cricket. It taught me patience, teamwork and playing the long game.</p><p style="margin-top:8px"><a class="lnk" href="assets/sports-certificate.pdf" target="_blank" rel="noopener noreferrer" aria-label="View cricket sports certificate (PDF, opens in a new tab)">View sports certificate (PDF) ↗</a></p></div>
   <div><h3>Debate</h3><p>I enjoy debating. It trains me to build an argument and test it against the opposite view.</p></div>
   <div><h3>Society and economy</h3><p>I follow socio-economic questions, especially those that shape India.</p></div>
+ </div>
+</div></section>
+
+<section id="next" class="next"><div class="wrap sec">
+ <aside><p class="mono">Next</p><h2>The next problems I want to solve.</h2></aside>
+ <div>
+  <p>I’ve worked on turning fragmented information into structured data, building AI-powered workflows, and applying statistical methods to real analytical questions. Next, I want to go deeper: building statistical models, developing reliable data systems, and turning rigorous analysis into products that make better decisions possible.</p>
+  <p>I’m looking to join a technically ambitious team that values sound reasoning as much as execution, where I can take ownership of difficult problems from definition through evaluation, and learn from people who challenge my thinking.</p>
+  <p class="mono">Data science · Statistical modelling · Applied machine learning · AI engineering · Data engineering</p>
+  <p class="close">I’m not looking for a title to grow into. I’m looking for problems worth growing through.</p>
  </div>
 </div></section>
 
