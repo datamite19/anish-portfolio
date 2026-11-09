@@ -232,7 +232,6 @@ footer a{color:var(--mute)}
     <dt>Why it matters</dt><dd>Reliable data movement and structured information reduce manual work and make data easier to use.</dd>
     <dt>My part</dt><dd>Contributed to data-loading workflows, database operations, validation and testing, API checks, and reporting, working with technology, marketing and operations teams.</dd>
     <dt>Tools</dt><dd>SQL, MongoDB, Bash, Linux, APIs, Postman, Jira</dd>
-    <dt>Outcome</dt><dd>[Add a measured result here only if you have evidence.]</dd>
    </dl>
   </article>
 
@@ -268,7 +267,7 @@ footer a{color:var(--mute)}
   <article class="item">
    <span class="tag">Research</span><span class="mono">Lead author · Published</span>
    <h3 style="margin-top:12px">Impact of AI on Education Forum Driven by Social Media</h3>
-   <p>[Add a 2–3 sentence summary in your own words from the paper: the question, the method, the main finding.]</p>
+   <p>This research paper demonstrates how AI-driven platforms influence core cognitive skills among students. Through advanced statistical modelling, the study quantifies the impact on critical thinking and performance resilience, and offers recommendations for the safe and effective integration of AI in educational environments.</p>
    <p><a class="lnk" data-link="paper" hidden target="_blank" rel="noopener noreferrer">Read my chapter (starts p. 133) ↗</a> &nbsp; <a class="tl" href="#research">Publication details</a></p>
   </article>
 
@@ -277,7 +276,6 @@ footer a{color:var(--mute)}
    <h3 style="margin-top:12px">Applied statistics, chosen for the question</h3>
    <p>I pick a method by the question and the data: regression for relationships, hypothesis tests for differences, factor analysis for hidden structure.</p>
    <ul class="chips"><li>Regression</li><li>Logistic regression</li><li>Hypothesis testing</li><li>Z-test</li><li>Mann–Whitney U</li><li>Exploratory factor analysis</li><li>Structural equation modelling</li></ul>
-   <p class="note" style="margin-top:14px">[Attach each method to the project where you used it, with the dataset and what it showed. Remove any you cannot back up.]</p>
   </article>
 
   <article class="item">
@@ -321,7 +319,6 @@ footer a{color:var(--mute)}
     <dt>Question</dt><dd>How do you turn a familiar, frustrating real-world situation into something people can play?</dd>
     <dt>What it is</dt><dd>The player must reach Kempegowda International Airport before a scheduled flight, managing limited time, money and phone battery while transport choices stay uncertain.</dd>
     <dt>Approach</dt><dd>Scenario-based decisions under constraints, with AI-generated narration and responses that change as the situation evolves.</dd>
-    <dt>My part</dt><dd>[Confirm: concept, interface and Gemini integration.]</dd>
     <dt>Tools</dt><dd>Next.js 14, React, Tailwind CSS, Lucide Icons, Google Gemini API</dd>
    </dl>
    <div class="plinks">
@@ -340,13 +337,6 @@ footer a{color:var(--mute)}
    </ol>
   </article>
 
-  <article class="item">
-   <span class="tag wip">In progress</span>
-   <h3 style="margin-top:12px">Projects from my PGDAST study</h3>
-   <p>Statistical notebooks, Python projects and experiments will be added here as I finish them.</p>
-   <div class="empty" id="proj-empty">No finished projects yet. Add entries to <code>PROJECTS</code> in the script and they appear here.</div>
-   <div id="proj-list"></div>
-  </article>
  </div>
 </div></section>
 
@@ -374,7 +364,6 @@ footer a{color:var(--mute)}
    <li><b>Make failure visible</b><span>Logs and alerts so problems surface early, with a clear place to look.</span></li>
    <li><b>Test and version it</b><span>Scripts live in version control and are tested before they run on real data.</span></li>
   </ul>
-  <p class="note" style="margin-top:14px">[Edit these to match what you have actually done at SEED. Keep only the ones you can speak to in an interview.]</p>
  </div>
 </div></section>
 
@@ -387,9 +376,10 @@ footer a{color:var(--mute)}
  <aside><p class="mono">Investigate</p><h2>Research</h2></aside>
  <div>
   <div class="pub">
-   <span class="tag">Published</span><span class="mono">Lead author · [venue, year]</span>
+   <span class="tag">Published</span><span class="mono">Lead author · GENIUS journal · 2025–26</span>
    <h3 style="margin-top:12px">Impact of AI on Education Forum Driven by Social Media</h3>
-   <p>[Short description from the paper’s abstract, in your own words.]</p>
+   <p>This research paper demonstrates how AI-driven platforms influence core cognitive skills among students. Through advanced statistical modelling, the study quantifies the impact on critical thinking and performance resilience, and offers recommendations for the safe and effective integration of AI in educational environments.</p>
+   <p class="note">Published in <i>GENIUS: An International Multidisciplinary Half Yearly Research Journal</i> · ISSN 2279-0489 · Volume XIV, Issue I, 2025–26 · Impact factor/indexing (2023): 7.508, as stated by the journal.</p>
    <a class="lnk" data-link="paper" hidden target="_blank" rel="noopener noreferrer">Read the paper ↗</a> <span class="note">My chapter starts on page 133 of the volume.</span>
   </div>
   <div class="empty">In progress or under review: nothing listed yet. Add each item with its exact status.</div>
@@ -452,9 +442,6 @@ const CONFIG = {
   RESUME_URL: "assets/resume.pdf",   // set to "" until you add the PDF
   PAPER_URL: "https://drive.google.com/file/d/1gGz39Jn9y3eV3GzWy1O-E7ILwgrVF12K/view?usp=sharing"
 };
-/* Finished learning projects. Example entry:
-   {title:"Regression on housing data", status:"Completed", summary:"One sentence.", link:"https://..."} */
-const PROJECTS = [];
 /* Learning tracks. Status must be one of: Studying, Practising, Applied in a project, Comfortable using independently */
 const TRACKS = [
  {name:"Applied statistics", topics:[["Probability and statistical inference","Studying"],["Hypothesis testing","Studying"],["Regression","Studying"],["Multivariate analysis","Studying"],["Industrial statistics","Studying"]]},
@@ -469,7 +456,7 @@ const ARTICLES = [
  {title:"The Next Frontier of AI: Beyond Intelligence, Towards Control",
   description:"Why the next step for AI may not be smarter models alone. The piece looks at the gap between reasoning and dependable execution, why long-running tasks need reliability, and how adversarial robustness, control boundaries, governance and human oversight shape responsible deployment.",
   date:"", readingTime:"4 min read", category:"AI control", publication:"Medium",
-  coverImage:"assets/images/ai-control-article.jpg",
+  coverImage:"assets/ai-control-article.jpg",
   externalUrl:"https://medium.com/@anishkandekar/the-next-frontier-of-ai-beyond-intelligence-towards-control-abe862330a11",
   topics:["Reliable execution","Adversarial robustness","AI control","AI safety and governance","Human oversight"]}
 ];
@@ -518,11 +505,6 @@ if (ARTICLES.length) {
    `<p style="margin-top:18px">${link(f)}</p></div></article>` +
    (rest.length ? `<ul class="arch">${rest.map(a => `<li><p class="mono" style="margin:0 0 4px">${meta(a)}</p><h3 style="font-size:1.1rem;margin-bottom:6px">${esc(a.title)}</h3><p style="margin-bottom:6px">${esc(a.description)}</p>${link(a)}</li>`).join("")}</ul>` : "") +
    `<p class="note" style="margin-top:26px">More writing will follow.</p>`;
-}
-if (PROJECTS.length) {
-  document.getElementById("proj-empty").hidden = true;
-  document.getElementById("proj-list").innerHTML = PROJECTS.map(p =>
-    `<div class="pub"><span class="tag${p.status === "Completed" ? "" : " wip"}">${esc(p.status)}</span><h3 style="margin-top:10px">${esc(p.title)}</h3><p>${esc(p.summary)}</p>${ok(p.link) ? `<a class="lnk" href="${esc(p.link)}" target="_blank" rel="noopener noreferrer">View ↗</a>` : ""}</div>`).join("");
 }
 </script>
 </body>
